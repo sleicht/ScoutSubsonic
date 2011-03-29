@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: My Application
+Bundle-SymbolicName: com.bsiag.subsonicClient.ui.swing;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.bsiag.subsonicClient.ui.swing.Activator
+Bundle-ActivationPolicy: lazy
+Scout-Project: com.bsiag.subsonicClient
+Scout-Project-Alias: subsonicClient
+Require-Bundle: org.eclipse.scout.rt.ui.swing,
+ com.bsiag.subsonicClient.client;visibility:=reexport,
+ com.bsiag.subsonicClient.shared,
+ org.eclipse.scout.net
+Export-Package: com.bsiag.subsonicClient.ui.swing;uses:="org.eclipse.scout.rt.ui.swing,
+ org.eclipse.scout.rt.client.session,
+ org.osgi.framework",
+ com.bsiag.subsonicClient.ui.swing
+Bundle-ClassPath: .
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
