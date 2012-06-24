@@ -15,12 +15,12 @@ import org.eclipse.scout.rt.client.ui.basic.table.columns.AbstractObjectColumn;
 import org.eclipse.scout.rt.client.ui.basic.table.columns.AbstractStringColumn;
 import org.eclipse.scout.rt.client.ui.desktop.outline.pages.AbstractPageWithTable;
 import org.eclipse.scout.rt.shared.ScoutTexts;
+import org.eclipse.scout.rt.shared.TEXTS;
 import org.eclipse.scout.rt.shared.services.common.jdbc.SearchFilter;
 import org.subsonic.restapi.Child;
 import org.subsonic.restapi.Directory;
 import org.subsonic.restapi.Response;
 
-import com.bsiag.subsonicClient.shared.Texts;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.ClientConfig;
@@ -39,7 +39,7 @@ public class TrackTablePage extends AbstractPageWithTable<TrackTablePage.Table> 
 
   @Override
   protected String getConfiguredTitle() {
-    return Texts.get("Track");
+    return TEXTS.get("Track");
   }
 
   @Override
@@ -172,7 +172,7 @@ public class TrackTablePage extends AbstractPageWithTable<TrackTablePage.Table> 
 
       @Override
       protected String getConfiguredHeaderText() {
-        return Texts.get("Length");
+        return TEXTS.get("Length");
       }
 
       @Override

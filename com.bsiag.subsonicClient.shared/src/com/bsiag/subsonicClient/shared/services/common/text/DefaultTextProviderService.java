@@ -8,28 +8,14 @@
  * Contributors:
  *     BSI Business Systems Integration AG - initial API and implementation
  ******************************************************************************/
-package com.bsiag.subsonicClient.ui.swing;
+package com.bsiag.subsonicClient.shared.services.common.text;
 
-import org.osgi.framework.BundleActivator;
-import org.osgi.framework.BundleContext;
+import org.eclipse.scout.rt.shared.services.common.text.AbstractDynamicNlsTextProviderService;
 
-public class Activator implements BundleActivator {
-
-  public static String PLUGIN_ID = "com.bsiag.subsonicClient.ui.swing";
-
-  private static Activator plugin;
-
-  public static Activator getDefault() {
-    return plugin;
-  }
+public class DefaultTextProviderService extends AbstractDynamicNlsTextProviderService {
 
   @Override
-  public void start(BundleContext context) throws Exception {
-    plugin = this;
-  }
-
-  @Override
-  public void stop(BundleContext context) throws Exception {
-    plugin = null;
+  protected String getDynamicNlsBaseName() {
+    return "resources.texts.Texts";
   }
 }

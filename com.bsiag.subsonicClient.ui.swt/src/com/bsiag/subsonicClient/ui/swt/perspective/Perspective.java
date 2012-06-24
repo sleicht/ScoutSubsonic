@@ -17,25 +17,26 @@ import org.eclipse.ui.IViewLayout;
 
 import com.bsiag.subsonicClient.ui.swt.Activator;
 
-/** <h3>Activator</h3>
- *  ...
-*/
+/**
+ * <h3>Activator</h3> ...
+ */
 public class Perspective implements IPerspectiveFactory {
 
-	public void createInitialLayout(IPageLayout layout) {
+  @Override
+  public void createInitialLayout(IPageLayout layout) {
 
     layout.setEditorAreaVisible(false);
 
     layout.setFixed(false);
 
-    layout.addStandaloneViewPlaceholder(Activator.OUTLINE_VIEW_ID,IPageLayout.LEFT,0.2f, IPageLayout.ID_EDITOR_AREA, true);
+    layout.addStandaloneViewPlaceholder(Activator.OUTLINE_VIEW_ID, IPageLayout.LEFT, 0.2f, IPageLayout.ID_EDITOR_AREA, true);
 
-    String folderId="com.bsiag.subsonicClient.ui.swt.viewStack";
-    IFolderLayout folderLayout = layout.createFolder(folderId,IPageLayout.RIGHT, 0.3f, Activator.TABLE_PAGE_VIEW_ID);
+    String folderId = "com.bsiag.subsonicClient.ui.swt.viewStack";
+    IFolderLayout folderLayout = layout.createFolder(folderId, IPageLayout.RIGHT, 0.3f, Activator.TABLE_PAGE_VIEW_ID);
     folderLayout.addPlaceholder(Activator.TABLE_PAGE_VIEW_ID);
     folderLayout.addPlaceholder(Activator.CENTER_VIEW_ID);
 
-    layout.addStandaloneViewPlaceholder(Activator.SEAECH_VIEW_ID,IPageLayout.BOTTOM,0.7f,  folderId, true);
+    layout.addStandaloneViewPlaceholder(Activator.SEAECH_VIEW_ID, IPageLayout.BOTTOM, 0.7f, folderId, true);
     IViewLayout outlineSelectorLayout = layout.getViewLayout(Activator.OUTLINE_VIEW_ID);
     outlineSelectorLayout.setCloseable(false);
     outlineSelectorLayout.setMoveable(false);

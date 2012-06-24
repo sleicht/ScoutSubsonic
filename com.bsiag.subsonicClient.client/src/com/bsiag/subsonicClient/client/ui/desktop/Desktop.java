@@ -24,10 +24,10 @@ import org.eclipse.scout.rt.client.ui.desktop.outline.IOutline;
 import org.eclipse.scout.rt.client.ui.form.ScoutInfoForm;
 import org.eclipse.scout.rt.client.ui.form.outline.DefaultOutlineTableForm;
 import org.eclipse.scout.rt.client.ui.form.outline.DefaultOutlineTreeForm;
+import org.eclipse.scout.rt.shared.TEXTS;
 
 import com.bsiag.subsonicClient.client.ClientSession;
 import com.bsiag.subsonicClient.client.ui.desktop.outlines.OverviewOutline;
-import com.bsiag.subsonicClient.shared.Texts;
 
 public class Desktop extends AbstractDesktop implements IDesktop {
   private static IScoutLogger logger = ScoutLogManager.getLogger(Desktop.class);
@@ -35,6 +35,7 @@ public class Desktop extends AbstractDesktop implements IDesktop {
   public Desktop() {
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   protected Class<? extends IOutline>[] getConfiguredOutlines() {
     ArrayList<Class> outlines = new ArrayList<Class>();
@@ -44,7 +45,7 @@ public class Desktop extends AbstractDesktop implements IDesktop {
 
   @Override
   public String getConfiguredTitle() {
-    return Texts.get("ApplicationTitle");
+    return TEXTS.get("ApplicationTitle");
   }
 
   @Override
@@ -67,7 +68,7 @@ public class Desktop extends AbstractDesktop implements IDesktop {
 
     @Override
     public String getConfiguredText() {
-      return Texts.get("FileMenu");
+      return TEXTS.get("FileMenu");
     }
 
     @Order(100.0)
@@ -75,7 +76,7 @@ public class Desktop extends AbstractDesktop implements IDesktop {
 
       @Override
       public String getConfiguredText() {
-        return Texts.get("ExitMenu");
+        return TEXTS.get("ExitMenu");
       }
 
       @Override
@@ -90,7 +91,7 @@ public class Desktop extends AbstractDesktop implements IDesktop {
 
     @Override
     public String getConfiguredText() {
-      return Texts.get("ToolsMenu");
+      return TEXTS.get("ToolsMenu");
     }
   }
 
@@ -99,7 +100,7 @@ public class Desktop extends AbstractDesktop implements IDesktop {
 
     @Override
     public String getConfiguredText() {
-      return Texts.get("HelpMenu");
+      return TEXTS.get("HelpMenu");
     }
 
     @Order(10.0)
@@ -107,7 +108,7 @@ public class Desktop extends AbstractDesktop implements IDesktop {
 
       @Override
       public String getConfiguredText() {
-        return Texts.get("AboutMenu");
+        return TEXTS.get("AboutMenu");
       }
 
       @Override
